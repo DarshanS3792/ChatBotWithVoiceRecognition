@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChatBotWithVoiceRecognition.Views.BotPage"
+             xmlns:local="clr-namespace:ChatBotWithVoiceRecognition.CustomRenderers">
+    <ContentPage.Content>
+
+        <StackLayout Spacing="10" Padding="10" HorizontalOptions="Fill" VerticalOptions="Fill" Orientation="Vertical">
+
+            <ListView x:Name="MessageListView"
+                          VerticalOptions="FillAndExpand"
+                          HorizontalOptions="Fill"
+                          HasUnevenRows="true"
+                          >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <Label VerticalOptions="StartAndExpand" HorizontalOptions="Fill" HorizontalTextAlignment="{Binding LblMessageHorizontalTextAlignment}"  Text="{Binding Text}"/>
+                                <Label VerticalOptions="End" HorizontalOptions="Fill" HorizontalTextAlignment="{Binding LblSenderHorizontalTextAlignment}" TextColor="Accent" Text="{Binding Sender}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!--<Entry Placeholder="Message" VerticalOptions="End" HorizontalOptions="Fill"
+                HorizontalTextAlignment="End" Completed="Send" />-->
+
+            <StackLayout VerticalOptions="End" HorizontalOptions="CenterAndExpand">
+                <StackLayout x:Name="iOSLayout" Orientation="Vertical" IsVisible="false">
+                    <Button x:Name="nameButtonStart" Text="Start" Clicked="OnStart"></Button>
+                    <Button IsEnabled="false" x:Name="nameButtonStop" Text="Stop" Clicked="OnStop"></Button>
+                </StackLayout>
+
+                <StackLayout x:Name="androidLayout" IsVisible="false">
+                    <local:VoiceButton x:Name="voiceButton" Text="Record" Image="microphone.png" ContentLayout="Top,0" BackgroundColor="White" IsVisible="true" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
