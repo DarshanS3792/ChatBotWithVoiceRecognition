@@ -16,7 +16,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Vertical">
-                                <Label VerticalOptions="StartAndExpand" HorizontalOptions="Fill" HorizontalTextAlignment="{Binding LblMessageHorizontalTextAlignment}"  Text="{Binding Text}"/>
+                                <Label VerticalOptions="StartAndExpand" HorizontalOptions="Fill" HorizontalTextAlignment="{Binding LblMessageHorizontalTextAlignment}" Text="{Binding Text}"/>
                                 <Label VerticalOptions="End" HorizontalOptions="Fill" HorizontalTextAlignment="{Binding LblSenderHorizontalTextAlignment}" TextColor="Accent" Text="{Binding Sender}"/>
                             </StackLayout>
                         </ViewCell>
